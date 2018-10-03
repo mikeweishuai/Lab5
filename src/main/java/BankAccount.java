@@ -19,17 +19,39 @@ public class BankAccount {
         WORKPLACE
     }
 
+    /**
+     *
+     */
     private int accountNumber;
-    public BankAccountType accountType;
+    private BankAccountType accountType;
     private double accountBalance;
     private String ownerName;
-    public double interestRate;
+    private double interestRate;
     private double interestEarned;
 
+    /**
+     *
+     * @param name name
+     * @param accountCategory category
+     */
     public BankAccount(final String name, final BankAccountType accountCategory) {
-        /*
-         * Implement this function
-         */
+        ownerName = name;
+        accountType = accountCategory;
+    }
+
+    /**
+     *
+     * @param a a
+     */
+    public void setAccountBalance(final double a) {
+        accountBalance = a;
+    }
+
+    /**
+     *
+     */
+    public double getAccountBalance() {
+        return accountBalance;
     }
 
     /*

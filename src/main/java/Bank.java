@@ -9,10 +9,24 @@
  */
 public class Bank {
 
-    public String bankName;
+    /**
+     *
+     */
+    private String bankName;
 
-    public Bank() {
+    /**
+     *
+     */
+    Bank() {
         bankName = "Illini Bank";
+    }
+
+    /**
+     *
+     * @name bank's name input
+     */
+    Bank(final String name) {
+        bankName = name;
     }
 
     /**
@@ -26,9 +40,11 @@ public class Bank {
      * @return boolean
      */
     public boolean withdrawMoney(final BankAccount bankAccount, final double amount) {
-        /*
-         * Implement this function
-         */
+        if (amount > bankAccount.getAccountBalance()) {
+            return false;
+        }
+        bankAccount.setAccountBalance(bankAccount.getAccountBalance() - amount);
+        return true;
     }
 
     /**
